@@ -1,4 +1,4 @@
-rofi.theme: /home/johny/.config/rofi/theme.rasi
+rofi.theme: theme.rasi
 rofi.width: 20
 rofi.modi: run,drun
 rofi.show-icons: false
