@@ -1,0 +1,6 @@
+rofi.theme: /home/johny/.config/rofi/theme.rasi
+rofi.width: 20
+rofi.modi: run,drun
+rofi.show-icons: false
+rofi.lines: 5
+rofi.separator-style: none

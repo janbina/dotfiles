@@ -1,0 +1,25 @@
+* {
+    background-color: #263238;
+    input-text:       #009688;
+    normal-text:      #00796B;
+    selected-bg:      #455A64;
+    selected-text:    #80CBC4;               
+}
+window {
+    padding: 10;
+}
+element {
+    padding: 10;
+    text-color: var(normal-text);
+}
+element selected.normal {
+    background-color: var(selected-bg);
+    text-color: var(selected-text);
+}
+inputbar {
+    padding: 15 10 15 10;
+    children: [entry];
+}
+entry {
+    text-color: var(input-text);
+}

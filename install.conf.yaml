@@ -5,3 +5,5 @@
 
 - link:
     ~/.gitconfig:
+    ~/.config/rofi/config: rofi/config
+    ~/.config/rofi/theme.rasi: rofi/theme.rasi
