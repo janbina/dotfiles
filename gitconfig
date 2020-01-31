@@ -1,0 +1,29 @@
+[user]
+    name = Jan Bína
+    email = binajohny@gmail.com
+[alias]
+    a = add --all
+    cm = commit
+    co = checkout
+    ps = push
+    pst = push --tags
+    pl = pull
+    rb = rebase
+    rbi = rebase --interactive
+    br = branch
+    st = status
+    cb = checkout -b
+    ll = log --oneline --graph --all --decorate --max-count=15
+    lll = log --oneline --graph --all --decorate
+    dff = diff HEAD^ HEAD
+    discard = checkout -- .
+    undo = reset HEAD^
+    nah = !git reset --hard && git clean -df
+    amend = commit --amend --no-edit
+[core]
+    editor = vim
+    pager = diff-so-fancy | less --tabs=4 -RFX
+[rebase]
+    autosquash = true
+[push]
+    default = current
