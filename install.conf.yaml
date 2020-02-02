@@ -8,3 +8,6 @@
     ~/.config/rofi/config: rofi/config
     ~/.config/rofi/theme.rasi: rofi/theme.rasi
     ~/.config/redshift/redshift.conf: redshift/redshift.conf
+
+- shell:
+  - [systemctl --user enable --now redshift-gtk.service, Starting redshift service]
