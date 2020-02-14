@@ -13,8 +13,8 @@
     br = branch
     st = status
     cb = checkout -b
-    ll = log --oneline --graph --all --decorate --max-count=15
-    lll = log --oneline --graph --all --decorate
+    ll = log --oneline --graph --decorate --max-count=15
+    lll = log --oneline --graph --decorate
     dff = diff HEAD^ HEAD
     discard = checkout -- .
     undo = reset HEAD^
