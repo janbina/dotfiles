@@ -1,6 +1,6 @@
 rofi.theme: theme.rasi
 rofi.width: 20
-rofi.modi: run,drun
+rofi.modi: run,drun,window
 rofi.show-icons: false
 rofi.lines: 5
 rofi.separator-style: none
