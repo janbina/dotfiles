@@ -1,0 +1,43 @@
+# =============================================================================
+# APP LAUNCHING ===============================================================
+# =============================================================================
+
+ctrl + space
+    rofi -show drun
+
+ctrl + alt + Delete
+    slock
+
+super + s
+    /home/johny/bin/rofi-power
+
+super + Return
+    termite -e fish
+
+Print
+    /home/johny/scripts/dmenu-scrot.sh
+
+# =============================================================================
+# AUDIO =======================================================================
+# =============================================================================
+
+XF86Audio{Lower,Raise}Volume
+    pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+XF86Audio{Prev,Next,Play}
+    playerctl {previous,next,play-pause}
+super + a
+    /home/johny/bin/cycleDefaultSink
+
+# =============================================================================
+# OTHER =======================================================================
+# =============================================================================
+
+# Brightness
+{_,shift + ,super + }XF86MonBrightness{Down,Up}
+    xbacklight {-dec 1,-dec 10,-set 0,-inc 1,-inc 10,-set 100}
+
+alt + Shift_L
+    xkb-switch -n
+

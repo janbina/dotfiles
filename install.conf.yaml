@@ -10,3 +10,4 @@
     ~/.config/rofi/theme.rasi: rofi/theme.rasi
     ~/.config/redshift/redshift.conf: redshift/redshift.conf
     ~/.config/starship.toml: starship/starship.toml
+    ~/.config/sxhkd: sxhkd
