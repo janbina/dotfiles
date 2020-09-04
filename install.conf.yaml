@@ -4,11 +4,10 @@
       relink: true
 
 - link:
-    ~/.config/git/config: git/gitconfig
+    ~/.config/git: git
     ~/.config/polybar: polybar
-    ~/.config/rofi/config: rofi/config
-    ~/.config/rofi/theme.rasi: rofi/theme.rasi
-    ~/.config/redshift/redshift.conf: redshift/redshift.conf
+    ~/.config/rofi: rofi
+    ~/.config/redshift: redshift
     ~/.config/starship.toml: starship/starship.toml
     ~/.config/sxhkd: sxhkd
     ~/.config/swm: swm
