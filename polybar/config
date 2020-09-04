@@ -1,0 +1,130 @@
+[colors]
+background = #000000
+primary = #BBC5FF
+fg-normal = #90a4ae
+fg-active = #cfd8dc
+fg-inactive = #546E7A
+
+[bar/bar]
+bottom=false
+enable-ipc = true
+width = 100%
+height = 27
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.fg-normal}
+
+line-size = 2
+line-color = ${colors.primary}
+
+padding-right = 3
+module-margin-left = 2
+module-margin-right = 2
+
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+
+modules-left = ewmh xwindow
+modules-right = spotify btctl cpu memory backlight battery pulseaudio xkeyboard date
+
+tray-position = none
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/date]
+type = internal/date
+interval = 5
+date = "%a %e %b [%I:%M]"
+format-foreground = ${colors.fg-active}
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+enable-scroll = true
+label = BR %percentage%
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+label = CPU %percentage%
+
+[module/memory]
+type = internal/memory
+interval = 3
+label = MEM %percentage_used%
+
+[module/network-wireless]
+type = internal/network
+interface = wlp4s0
+;label-connected-foreground = #eefafafa
+label-disconnected = W-
+;label-disconnected-foreground = #66ffffff
+format-connected = W<ramp-signal>
+ramp-signal-0 = 0
+ramp-signal-1 = 1
+ramp-signal-2 = 2
+ramp-signal-3 = 3
+ramp-signal-4 = 4
+ramp-signal-5 = 5
+
+[module/network-wired]
+type = internal/network
+interface = enp0s31f6
+label-connected = E+
+;label-connected-foreground = #eefafafa
+label-disconnected = E-
+;label-disconnected-foreground = #66ffffff
+
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = true
+interval = 5
+label-volume = vol: %percentage%
+label-muted = mut: %percentage%
+
+[module/ewmh]
+type = internal/xworkspaces
+enable-scroll = false
+label-active = "  %index%  "
+label-active-foreground = ${colors.primary}
+label-active-underline = ${colors.primary}
+label-empty = "  %index%  "
+label-empty-foreground = ${colors.fg-inactive}
+
+[module/spotify]
+type = custom/script
+interval = 1
+format = <label>
+exec = python ~/.config/polybar/scripts/spotify_status.py
+click-left = swmctl group toggle 8
+
+[module/btctl]
+type = custom/script
+exec = ~/.config/polybar/scripts/system-bluetooth-bluetoothctl.sh
+tail = true
+click-left = ~/.config/polybar/scripts/system-bluetooth-bluetoothctl.sh --toggle &
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+[module/battery]
+type = custom/script
+exec = ~/.config/polybar/scripts/bat.sh
+interval = 120
+label = BAT %output%
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0

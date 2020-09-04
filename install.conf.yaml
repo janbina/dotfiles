@@ -5,6 +5,7 @@
 
 - link:
     ~/.config/git/config: git/gitconfig
+    ~/.config/polybar: polybar
     ~/.config/rofi/config: rofi/config
     ~/.config/rofi/theme.rasi: rofi/theme.rasi
     ~/.config/redshift/redshift.conf: redshift/redshift.conf
