@@ -1,0 +1,35 @@
+# =============================================================================
+# WINDOW MANAGER STUFF ========================================================
+# =============================================================================
+
+# change workspace
+super + {1-9}
+    bspc desktop -f {0-8}
+
+super + {Left,Right}
+    bspc desktop -f {prev,next}
+
+# move win to workspace
+super + alt + {1-9}
+    xdotool getactivewindow set_desktop_for_window {0-8}
+super + alt + {Left,Right}
+    xdotool getactivewindow set_desktop_for_window $(~/bin/relativedesk {-1,1})
+
+# closing windows
+super + q
+    wmctrl -c :ACTIVE:
+ctrl + super + q
+    xkill
+
+# maximize
+super + Up
+    wmctrl -r :ACTIVE: -b toggle,maximized_vert,maximized_horz
+
+super + shift + q
+    bspc quit
+
+super + t
+    bspc node -t ~floating
+
+super + space
+    bspc desktop -l

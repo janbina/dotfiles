@@ -4,6 +4,7 @@
       relink: true
 
 - link:
+    ~/.config/bspwm:
     ~/.config/git:
     ~/.config/polybar:
     ~/.config/rofi:
