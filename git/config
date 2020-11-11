@@ -1,9 +1,6 @@
 # references `git-number` https://github.com/holygeek/git-number
 #            `diff-so-fancy` https://github.com/so-fancy/diff-so-fancy
 
-[user]
-    name = Jan Bína
-    email = binajohny@gmail.com
 [alias]
     a = add --all
     an = number add
