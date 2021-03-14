@@ -1,19 +1,18 @@
 add_newline = false
 
-prompt_order = [
-    "username",
-    "hostname",
-    "directory",
-    "git_branch",
-    "git_commit",
-    "git_state",
-    "git_status",
-    "memory_usage",
-    "character",
-]
+format = """\
+    $username\
+    $hostname\
+    $directory\
+    $git_branch\
+    $git_commit\
+    $git_state\
+    $git_status\
+    $memory_usage\
+    $character\
+    """
 
 [directory]
-prefix = ""
 style = "bold #8787af"
 truncate_to_repo = false
 
@@ -39,6 +38,5 @@ symbol = " "
 style = "bold #8787af"
 
 [character]
-symbol = "$"
-style_success = "bold #8787af"
-style_failure = "bold red"
+success_symbol = "[❯](bold #8787af)"
+error_symbol = "[❯](bold red)"

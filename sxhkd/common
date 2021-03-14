@@ -17,6 +17,12 @@ super + Return
 Print
     /home/johny/scripts/dmenu-scrot.sh
 
+super + n
+    chromium
+
+super + shift + n
+    chromium --incognito
+
 # =============================================================================
 # AUDIO =======================================================================
 # =============================================================================
@@ -39,5 +45,5 @@ super + a
     xbacklight {-dec 1,-dec 10,-set 0,-inc 1,-inc 10,-set 100}
 
 alt + Shift_L
-    xkb-switch -n
+    setxkbmap -layout us,cz -variant ,qwerty && xkb-switch -n
 

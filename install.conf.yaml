@@ -13,4 +13,6 @@
     ~/.config/swm:
     ~/.config/sxhkd:
     ~/.config/termite:
+    ~/.xmonad: xmonad
+
 

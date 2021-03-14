@@ -27,7 +27,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = ewmh xwindow
-modules-right = spotify btctl cpu memory backlight battery pulseaudio xkeyboard date
+modules-right = spotify btctl cpu memory backlight battery seznamvpn pulseaudio xkeyboard date
 
 tray-position = none
 
@@ -128,3 +128,10 @@ screenchange-reload = true
 [global/wm]
 margin-top = 0
 margin-bottom = 0
+
+[module/seznamvpn]
+type = custom/script
+exec = ~/.config/polybar/scripts/vpnactivetext.sh seznam
+interval = 10
+label = VPN %output%
+click-left = ~/.config/polybar/scripts/vpntoggle.sh seznam

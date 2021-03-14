@@ -1,0 +1,8 @@
+configuration {
+	modi: "run,drun,window";
+	width: 20;
+	lines: 5;
+	show-icons: false;
+	separator-style: "none";
+	theme: "theme.rasi";
+}
