@@ -5,6 +5,7 @@
 
 - link:
     ~/.config/bspwm:
+    ~/.config/fish:
     ~/.config/git:
     ~/.config/polybar:
     ~/.config/rofi:
