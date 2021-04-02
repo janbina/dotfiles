@@ -14,5 +14,6 @@
     ~/.config/sxhkd:
     ~/.config/termite:
     ~/.xmonad: xmonad
+    ~/.config/xmobar:
 
 
