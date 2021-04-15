@@ -121,11 +121,14 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm ]
 mySpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
 mySpacing i = spacingRaw False (Border i i i i) True (Border i i i i) True
 
+winSpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
+winSpacing i = spacingRaw False (Border 0 0 0 0) True (Border i i i i) True
+
 tall     = renamed [Replace "tall"]
            $ windowNavigation
            $ smartBorders
            $ limitWindows 12
-           $ mySpacing 8
+           $ winSpacing 4
            $ ResizableTall 1 (3/100) (1/2) []
 monocle  = renamed [Replace "monocle"]
            $ windowNavigation
@@ -135,14 +138,14 @@ grid     = renamed [Replace "grid"]
            $ windowNavigation
            $ smartBorders
            $ limitWindows 12
-           $ mySpacing 8
+           $ winSpacing 4
            $ mkToggle (single MIRROR)
            $ Grid (16/10)
 threeCol = renamed [Replace "threeCol"]
            $ windowNavigation
            $ smartBorders
            $ limitWindows 7
-           $ mySpacing 4
+           $ winSpacing 4
            $ ThreeCol 1 (3/100) (1/2)
 
 -- The layout hook
