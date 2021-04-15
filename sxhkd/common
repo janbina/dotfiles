@@ -18,10 +18,10 @@ Print
     /home/johny/scripts/dmenu-scrot.sh
 
 super + n
-    chromium
+    brave
 
 super + shift + n
-    chromium --incognito
+    brave --incognito
 
 # =============================================================================
 # AUDIO =======================================================================
