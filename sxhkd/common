@@ -12,7 +12,7 @@ super + s
     /home/johny/bin/rofi-power
 
 super + Return
-    termite -e fish
+    alacritty
 
 Print
     /home/johny/scripts/dmenu-scrot.sh

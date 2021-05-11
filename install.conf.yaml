@@ -4,6 +4,7 @@
       relink: true
 
 - link:
+    ~/.config/alacritty:
     ~/.config/bspwm:
     ~/.config/fish:
     ~/.config/git:
@@ -14,7 +15,6 @@
     ~/.config/starship.toml: starship/starship.toml
     ~/.config/swm:
     ~/.config/sxhkd:
-    ~/.config/termite:
     ~/.xmonad: xmonad
     ~/.config/xmobar:
 
