@@ -18,10 +18,21 @@ Config { font = "xft:Ubuntu:weight=bold:pixelsize=11:antialias=true:hinting=true
                  -- , Run DynNetwork ["-t", "<fn=1>\xf0ab </fn> <rx>kb  <fn=1>\xf0aa </fn> <tx>kb"] 20
                     , Run Cpu ["-t", "<fn=1>\xf108 </fn> cpu <total>"] 20
                     , Run Memory ["-t", "<fn=1>\xf233 </fn> mem <usedratio>"] 20
-                    , Run Battery ["-t", "<acstatus><left>",
-                                   "-L", "10", "-H", "80", "-p", "3", "-l", "red", "-n", "orange",
-                                   "--", "-O", "<fn=1>\xf111 </fn>", "-i", "<fn=1>\xf111 </fn>", "-o", "<fn=1>\xf10c </fn>",
-                                   "-f", "AC/online"] 600
+                    , Run Battery ["--template", "<acstatus><left>",
+                                   "--Low", "10",
+				   "--High", "30",
+                                   "-p", "3",
+                                   "--low", "red",
+                                   "--normal", "orange",
+                                   "--",
+                                   -- charging
+                                   "-O", "<fn=1>\xf111 </fn>",
+                                   -- charged
+                                   "-i", "<fn=1>\xf111 </fn>",
+                                   -- discharging
+                                   "-o", "<fn=1>\xf10c </fn>",
+                                   "-f", "AC/online"
+                                  ] 600
                     , Run Weather "LKPR" ["-t", "PRG <tempC>° <windMs>ms <skyCondition>"] 36000
                     , Run Weather "LOWI" ["-t", "INN <tempC>°"] 36000
                     , Run Weather "EFHK" ["-t", "HEL <tempC>°"] 36000
