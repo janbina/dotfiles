@@ -17,7 +17,7 @@ style = "bold #8787af"
 truncate_to_repo = false
 
 [git_branch]
-symbol = " "
+symbol = " "
 style = "bold #5f87af"
 
 [git_commit]
@@ -32,11 +32,7 @@ stashed = ""
 
 [memory_usage]
 disabled = false
-show_percentage = true
-threshold = 70
+threshold = 75
 symbol = " "
 style = "bold #8787af"
-
-[character]
-success_symbol = "[❯](bold #8787af)"
-error_symbol = "[❯](bold red)"
+format = "$symbol[${ram_pct}]($style) "
