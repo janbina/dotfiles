@@ -15,7 +15,6 @@ cursor:
 shell:
   program: /bin/fish
 
-
 colors:
   primary:
     background: '#000000'
@@ -40,4 +39,7 @@ colors:
     magenta: '#c397d8'
     cyan:    '#70c0b1'
     white:   '#eaeaea'
+
+env:
+  WINIT_X11_SCALE_FACTOR: "1"
 
