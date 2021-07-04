@@ -12,6 +12,7 @@
     ~/.config/polybar:
     ~/.config/rofi:
     ~/.config/redshift:
+    ~/.config/spectrwm:
     ~/.config/starship.toml: starship/starship.toml
     ~/.config/swm:
     ~/.config/sxhkd:
