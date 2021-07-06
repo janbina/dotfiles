@@ -1,9 +1,9 @@
 * {
-    background-color: #263238;
-    input-text:       #009688;
-    normal-text:      #00796B;
-    selected-bg:      #455A64;
-    selected-text:    #80CBC4;               
+    background-color: #282a36;
+    input-text:       #bbc5ff;
+    normal-text:      #bbc5ff;
+    selected-bg:      #354067;
+    selected-text:    #bbc5ff;               
 }
 window {
     padding: 10;
