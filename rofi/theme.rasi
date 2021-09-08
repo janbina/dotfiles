@@ -6,20 +6,23 @@
     selected-text:    #bbc5ff;               
 }
 window {
+    width: 500;
+    height: 370;
     padding: 10;
+    background-color: @background-color;
 }
-element {
+element-text {
     padding: 10;
-    text-color: var(normal-text);
+    text-color: @normal-text;
 }
-element selected.normal {
-    background-color: var(selected-bg);
-    text-color: var(selected-text);
+element-text selected normal {
+    background-color: @selected-bg;
+    text-color: @selected-text;
 }
 inputbar {
     padding: 15 10 15 10;
     children: [entry];
 }
 entry {
-    text-color: var(input-text);
+    text-color: @input-text;
 }
