@@ -4,7 +4,7 @@ ssh-add -q ~/.ssh/github
 ssh-add -q ~/.ssh/gitlab
 ssh-add -q ~/.ssh/seznam
 
-set PATH ~/scripts ~/bin ~/.gem/ruby/2.6.0/bin ~/go/bin $PATH
+set PATH ~/scripts ~/bin ~/.local/share/gem/ruby/3.0.0/bin ~/go/bin ~/.cargo/bin $PATH
 
 # Hide the fish greeting
 set fish_greeting ""
