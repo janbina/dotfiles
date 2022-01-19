@@ -12,7 +12,7 @@ Config { font = "xft:Ubuntu:weight=bold:pixelsize=11:antialias=true:hinting=true
        , hideOnStart = False
        , allDesktops = True
        , persistent = True
-       , iconRoot = "/home/johny/.xmonad/xpm/"
+       , iconRoot = "/home/johny/.config/xmonad/xpm/"
        , commands = [
                       Run Date "%a %d %b [%I:%M]" "date" 50
                  -- , Run DynNetwork ["-t", "<fn=1>\xf0ab </fn> <rx>kb  <fn=1>\xf0aa </fn> <tx>kb"] 20

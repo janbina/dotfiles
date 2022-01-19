@@ -84,10 +84,10 @@ myBorderWidth :: Dimension
 myBorderWidth = 1          -- Sets border width for windows
 
 myNormColor :: String
-myNormColor   = "#282c34"  -- Border color of normal windows
+myNormColor   = "#282a36"  -- Border color of normal windows
 
 myFocusColor :: String
-myFocusColor  = "#46d9ff"  -- Border color of focused windows
+myFocusColor  = "#bd93f9"  -- Border color of focused windows
 
 altMask :: KeyMask
 altMask = mod1Mask         -- Setting this for use in xprompts
@@ -97,13 +97,14 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 
 myStartupHook :: X ()
 myStartupHook = do
-          spawnOnce "feh --bg-fill ~/Pictures/wall.jpg &"
+          spawnOnce "feh --bg-fill ~/pictures/wall.jpg &"
           spawnOnce "picom &"
           spawnOnce "redshift &"
           spawnOnce "mons -m &"
           spawnOnce "sxhkd -c ~/.config/sxhkd/common &"
           spawnOnce "setxkbmap -layout us,cz -variant ,qwerty"
           spawnOnce "xsetroot -cursor_name left_ptr"
+          spawnOnce "~/.config/polybar/launch.sh"
           setWMName "LG3D"
 
 myScratchPads :: [NamedScratchpad]
@@ -157,18 +158,14 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange
                                  ||| grid
                                  ||| threeCol
 
-myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "]
+myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 myManageHook :: XMonad.Query (Data.Monoid.Endo WindowSet)
 myManageHook = composeAll
      -- using 'doShift ( myWorkspaces !! 7)' sends program to workspace 8!
      -- I'm doing it this way because otherwise I would have to write out the full
      -- name of my workspaces, and the names would very long if using clickable workspaces.
-     [ className =? "vlc"     --> doShift ( myWorkspaces !! 7 )
-     , className =? "Gimp"    --> doShift ( myWorkspaces !! 8 )
-     , className =? "Gimp"    --> doFloat
-     , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
-     ] <+> namedScratchpadManageHook myScratchPads <+> insertPosition Below Newer
+     [ ] <+> namedScratchpadManageHook myScratchPads <+> insertPosition Below Newer
 
 removeKeys :: [String]
 removeKeys =
@@ -254,7 +251,6 @@ myKeys =
 
 main :: IO ()
 main = do
-    xmproc0 <- spawnPipe "xmobar -x 0 /home/johny/.config/xmobar/xmobarrc.hs"
     -- the xmonad, ya know...what the WM is named after!
     xmonad $ ewmh def
         { manageHook = ( isFullscreen --> doFullFloat ) <+> myManageHook <+> manageDocks
@@ -265,7 +261,6 @@ main = do
         , handleEventHook    = serverModeEventHookCmd
                                <+> serverModeEventHook
                                <+> serverModeEventHookF "XMONAD_PRINT" (io . putStrLn)
-                               <+> docksEventHook
         , modMask            = myModMask
         , startupHook        = myStartupHook
         , layoutHook         = myLayoutHook
@@ -273,16 +268,4 @@ main = do
         , borderWidth        = myBorderWidth
         , normalBorderColor  = myNormColor
         , focusedBorderColor = myFocusColor
-        , logHook = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP
-                        { ppOutput = \x -> hPutStrLn xmproc0 x  -- >> hPutStrLn xmproc1 x  >> hPutStrLn xmproc2 x
-                        , ppCurrent = xmobarColor "#98be65" "" . wrap "[" "]" -- Current workspace in xmobar
-                        , ppVisible = xmobarColor "#98be65" ""                -- Visible but not current workspace
-                        , ppHidden = xmobarColor "#c792ea" ""                 -- xmobarColor "#82AAFF" "" . wrap "*" ""   -- Hidden workspaces in xmobar
-                        , ppHiddenNoWindows = xmobarColor "#c792ea" ""        -- Hidden workspaces (no windows)
-                        , ppTitle = xmobarColor "#cdcdcd" "" . shorten 60     -- Title of active window in xmobar
-                        , ppSep =  "<fc=#666666> | </fc>"                     -- Separators in xmobar
-                        , ppUrgent = xmobarColor "#C45500" "" . wrap "!" "!"  -- Urgent workspace
-                        , ppExtras  = [windowCount]                           -- # of windows current workspace
-                        , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]
-                        }
         } `additionalKeysP` myKeys `removeKeysP` removeKeys
