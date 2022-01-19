@@ -8,31 +8,24 @@ format = """\
     $git_commit\
     $git_state\
     $git_status\
-    $memory_usage\
     $character\
     """
 
 [directory]
-style = "bold #8787af"
+style = "bold #bd93f9"
 truncate_to_repo = false
 
 [git_branch]
 symbol = " "
-style = "bold #5f87af"
+style = "bold #ff79c6"
 
 [git_commit]
-style = "bold #5f87af"
+style = "bold #ff79c6"
 
 [git_state]
-style = "bold #5f87af"
+style = "bold #ff79c6"
 
 [git_status]
-style = "bold #d75f87"
+style = "bold #f1fa8c"
 stashed = ""
 
-[memory_usage]
-disabled = false
-threshold = 75
-symbol = " "
-style = "bold #8787af"
-format = "$symbol[${ram_pct}]($style) "
