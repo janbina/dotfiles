@@ -1,9 +1,17 @@
 [colors]
-background = #000000
-primary = #BBC5FF
-fg-normal = #90a4ae
-fg-active = #cfd8dc
-fg-inactive = #546E7A
+bg-special = #1d1f27
+background = #282a36
+current-line = #44475a
+selection = #44475a
+foreground = #f8f8f2
+comment = #6272a4
+cyan = #8be9fd
+green = #50fa7b
+orange = #ffb86c
+pink = #ff79c6
+purple = #bd93f9
+red = #ff5555
+yellow = #f1fa8c
 
 [bar/bar]
 bottom=false
@@ -13,21 +21,21 @@ height = 27
 fixed-center = false
 
 background = ${colors.background}
-foreground = ${colors.fg-normal}
+foreground = ${colors.foreground}
 
-line-size = 2
-line-color = ${colors.primary}
+line-size = 1
+line-color = ${colors.foreground}
 
-padding-right = 3
-module-margin-left = 2
-module-margin-right = 2
+padding-right = 1
+module-margin = 1
 
-font-0 = fixed:pixelsize=10;1
+font-0 = "Jetbrains Mono:pixelsize=9;2"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
+font-3 = MaterialIcons:size=10;3
 
 modules-left = ewmh xwindow
-modules-right = spotify btctl cpu memory backlight battery seznamvpn pulseaudio xkeyboard date
+modules-right = cpu memory battery pulseaudio xkeyboard date
 
 tray-position = none
 
@@ -36,13 +44,13 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title:0:50:..%
 
 [module/date]
 type = internal/date
 interval = 5
 date = "%a %e %b [%I:%M]"
-format-foreground = ${colors.fg-active}
+format-foreground = ${colors.purple}
 
 [module/backlight]
 type = internal/backlight
@@ -53,63 +61,40 @@ label = BR %percentage%
 [module/cpu]
 type = internal/cpu
 interval = 2
-label = CPU %percentage%
+label = %{T-4}%{T-} %percentage:02%
 
 [module/memory]
 type = internal/memory
 interval = 3
-label = MEM %percentage_used%
-
-[module/network-wireless]
-type = internal/network
-interface = wlp4s0
-;label-connected-foreground = #eefafafa
-label-disconnected = W-
-;label-disconnected-foreground = #66ffffff
-format-connected = W<ramp-signal>
-ramp-signal-0 = 0
-ramp-signal-1 = 1
-ramp-signal-2 = 2
-ramp-signal-3 = 3
-ramp-signal-4 = 4
-ramp-signal-5 = 5
-
-[module/network-wired]
-type = internal/network
-interface = enp0s31f6
-label-connected = E+
-;label-connected-foreground = #eefafafa
-label-disconnected = E-
-;label-disconnected-foreground = #66ffffff
+label = %{T4}%{T-} %percentage_used%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 use-ui-max = true
 interval = 5
-label-volume = vol: %percentage%
-label-muted = mut: %percentage%
+label-volume = %{T4}%{T-} %percentage%
+label-muted = %{T4}%{T-} %percentage%
 
 [module/ewmh]
 type = internal/xworkspaces
 enable-scroll = false
-label-active = "  %index%  "
-label-active-foreground = ${colors.primary}
-label-active-underline = ${colors.primary}
-label-empty = "  %index%  "
-label-empty-foreground = ${colors.fg-inactive}
+enable-click = false
+label-active = %index%
+label-active-padding = 1
+label-active-foreground = ${colors.orange}
+label-active-underline = ${colors.orange}
+label-empty = %index%
+label-empty-foreground = ${colors.purple}
+label-empty-padding = 1
+label-occupied = %index%
+label-occupied-foreground = ${colors.purple}
+label-occupied-padding = 1
 
 [module/spotify]
 type = custom/script
 interval = 1
 format = <label>
 exec = python ~/.config/polybar/scripts/spotify_status.py
-click-left = swmctl group toggle 8
-
-[module/btctl]
-type = custom/script
-exec = ~/.config/polybar/scripts/system-bluetooth-bluetoothctl.sh
-tail = true
-click-left = ~/.config/polybar/scripts/system-bluetooth-bluetoothctl.sh --toggle &
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -120,7 +105,7 @@ blacklist-1 = scroll lock
 type = custom/script
 exec = ~/.config/polybar/scripts/bat.sh
 interval = 120
-label = BAT %output%
+label = %{T4}%{T-} %output%
 
 [settings]
 screenchange-reload = true
@@ -129,9 +114,3 @@ screenchange-reload = true
 margin-top = 0
 margin-bottom = 0
 
-[module/seznamvpn]
-type = custom/script
-exec = ~/.config/polybar/scripts/vpnactivetext.sh seznam
-interval = 10
-label = VPN %output%
-click-left = ~/.config/polybar/scripts/vpntoggle.sh seznam

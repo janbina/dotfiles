@@ -18,12 +18,12 @@ POWER="$(cat /sys/class/power_supply/AC/uevent | grep "SUPPLY_ONLINE=" | cut -d 
 
 PERC=$((100 * $TOTAL_NOW / $TOTAL_FULL))
 
-STAT='\xf10c'
+STAT='-'
 
-if [ $POWER -eq 1 ]; then STAT='\xf111'; fi
+if [ $POWER -eq 1 ]; then STAT='+'; fi
 
-if [ $PERC -gt 98 ]; then
-    echo "$STAT full"
+if [ $PERC -gt 97 ]; then
+    echo "full"
 else
-    echo "$STAT $PERC"
+    echo "$PERC$STAT"
 fi
