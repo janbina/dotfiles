@@ -106,7 +106,6 @@ myStartupHook = do
           spawnOnce "setxkbmap -layout us,cz -variant ,qwerty"
           spawnOnce "xsetroot -cursor_name left_ptr"
           spawnOnce "~/.config/polybar/launch.sh"
-          setWMName "LG3D"
 
 myScratchPads :: [NamedScratchpad]
 myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm ]
@@ -253,7 +252,7 @@ myKeys =
 main :: IO ()
 main = do
     -- the xmonad, ya know...what the WM is named after!
-    xmonad $ ewmh def
+    xmonad $ ewmh $ Hacks.javaHack $ def
         { manageHook = ( isFullscreen --> doFullFloat ) <+> myManageHook <+> manageDocks
         -- Run xmonad commands from command line with "xmonadctl command". Commands include:
         -- shrink, expand, next-layout, default-layout, restart-wm, xterm, kill, refresh, run,
