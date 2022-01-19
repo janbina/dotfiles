@@ -76,6 +76,7 @@ import XMonad.Util.EZConfig (additionalKeysP, removeKeysP)
 import XMonad.Util.NamedScratchpad
 import XMonad.Util.Run (runProcessWithInput, safeSpawn, spawnPipe)
 import XMonad.Util.SpawnOnce
+import qualified XMonad.Util.Hacks as Hacks
 
 myModMask :: KeyMask
 myModMask = mod4Mask       -- Sets modkey to super/windows key
@@ -261,6 +262,7 @@ main = do
         , handleEventHook    = serverModeEventHookCmd
                                <+> serverModeEventHook
                                <+> serverModeEventHookF "XMONAD_PRINT" (io . putStrLn)
+                               <+> Hacks.windowedFullscreenFixEventHook
         , modMask            = myModMask
         , startupHook        = myStartupHook
         , layoutHook         = myLayoutHook
