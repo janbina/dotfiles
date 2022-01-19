@@ -16,7 +16,7 @@
     ~/.config/starship.toml: starship/starship.toml
     ~/.config/swm:
     ~/.config/sxhkd:
-    ~/.xmonad: xmonad
+    ~/.config/xmonad:
     ~/.config/xmobar:
 
 
