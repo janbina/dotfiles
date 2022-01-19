@@ -25,6 +25,7 @@
     amend = commit --amend --no-edit
     root = !pwd
     chp = cherry-pick
+    arc = !git add . && git -c core.editor=true rebase --continue
 [core]
     editor = vim
     pager = diff-so-fancy | less --tabs=4 -RFX
