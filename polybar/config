@@ -33,9 +33,10 @@ font-0 = "Jetbrains Mono:pixelsize=9;2"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = MaterialIcons:size=10;3
+font-4 = "Weather Icons:size=9;3"
 
 modules-left = ewmh xwindow
-modules-right = cpu memory battery pulseaudio xkeyboard date
+modules-right = wwww cpu memory battery pulseaudio pacmd-name xkeyboard date
 
 tray-position = none
 
@@ -49,7 +50,7 @@ label = %title:0:50:..%
 [module/date]
 type = internal/date
 interval = 5
-date = "%a %e %b [%I:%M]"
+date = "%a %d %b [%I:%M]"
 format-foreground = ${colors.purple}
 
 [module/backlight]
@@ -74,6 +75,12 @@ use-ui-max = true
 interval = 5
 label-volume = %{T4}%{T-} %percentage%
 label-muted = %{T4}%{T-} %percentage%
+
+[module/pacmd-name]
+type = custom/script
+interval = 5
+format = [<label>]
+exec = ~/bin/pacmd-active-name
 
 [module/ewmh]
 type = internal/xworkspaces
@@ -106,6 +113,11 @@ type = custom/script
 exec = ~/.config/polybar/scripts/bat.sh
 interval = 120
 label = %{T4}%{T-} %output%
+
+[module/wwww]
+type = custom/script
+exec = ~/.config/polybar/scripts/forecast.sh
+interval = 600
 
 [settings]
 screenchange-reload = true
