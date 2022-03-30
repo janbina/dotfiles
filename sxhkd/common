@@ -32,9 +32,9 @@ XF86Audio{Lower,Raise}Volume
 XF86AudioMute
     pactl set-sink-mute @DEFAULT_SINK@ toggle
 XF86Audio{Prev,Next,Play}
-    playerctl {previous,next,play-pause}
+    /home/johny/bin/sp {prev,next,play}
 super + a
-    /home/johny/bin/cycleDefaultSink
+    /home/johny/bin/pacmd-cycle
 
 # =============================================================================
 # OTHER =======================================================================
