@@ -26,6 +26,7 @@
     root = !pwd
     chp = cherry-pick
     arc = !git add . && git -c core.editor=true rebase --continue
+    prev = co HEAD^
 [core]
     editor = vim
     pager = diff-so-fancy | less --tabs=4 -RFX
