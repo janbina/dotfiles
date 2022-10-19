@@ -1,10 +1,11 @@
 * {
-    background-color: #282a36;
-    input-text:       #bd93f9;
-    normal-text:      #bd93f9;
-    selected-bg:      #44475a;
-    selected-text:    #bd93f9;               
+    background-color: #22212c;
+    input-text:       #9580FF;
+    normal-text:      #9580FF;
+    selected-bg:      #454158;
+    selected-text:    #9580FF;               
 }
+
 window {
     width: 500;
     height: 370;
