@@ -17,7 +17,7 @@ shell:
   program: /bin/fish
 
 import:
-  - ~/.config/alacritty/dracula.yml
+  - ~/.config/alacritty/dracula-pro.yml
 
 # colors:
 #  primary:
