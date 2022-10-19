@@ -1,17 +1,16 @@
 [colors]
-bg-special = #1d1f27
-background = #282a36
-current-line = #44475a
-selection = #44475a
+background-special = #151320
+background = #22212C
+selection = #454158
 foreground = #f8f8f2
-comment = #6272a4
-cyan = #8be9fd
-green = #50fa7b
-orange = #ffb86c
-pink = #ff79c6
-purple = #bd93f9
-red = #ff5555
-yellow = #f1fa8c
+comment = #7970A9
+cyan = #80FFEA
+green = #8AFF80
+orange = #FFCA80
+pink = #FF80BF
+purple = #9580FF
+red = #FF9580
+yellow = #FFFF80
 
 [bar/bar]
 bottom=false
