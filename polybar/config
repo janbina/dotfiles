@@ -13,6 +13,7 @@ red = #FF9580
 yellow = #FFFF80
 
 [bar/bar]
+monitor = ${env:MONITOR:}
 bottom=false
 enable-ipc = true
 width = 100%
