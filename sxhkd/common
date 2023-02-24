@@ -18,10 +18,10 @@ Print
     /home/johny/scripts/dmenu-scrot.sh
 
 super + n
-    brave
+    firefox
 
 super + shift + n
-    brave --incognito
+    firefox --private-window
 
 # =============================================================================
 # AUDIO =======================================================================

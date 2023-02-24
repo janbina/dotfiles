@@ -80,7 +80,7 @@ label-muted = %{T4}%{T-} %percentage%
 type = custom/script
 interval = 5
 format = [<label>]
-exec = ~/bin/pacmd-active-name
+exec = ~/bin/pactl-active-name
 
 [module/ewmh]
 type = internal/xworkspaces
