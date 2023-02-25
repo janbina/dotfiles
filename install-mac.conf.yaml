@@ -1,0 +1,9 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- link:
+    ~/.config/fish:
+    ~/.config/git:
+    ~/.config/starship.toml: starship/starship.toml
