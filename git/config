@@ -1,43 +1,44 @@
-# references `git-number` https://github.com/holygeek/git-number
-#            `diff-so-fancy` https://github.com/so-fancy/diff-so-fancy
+# references:
+# `git-number` https://github.com/holygeek/git-number
+# `diff-so-fancy` https://github.com/so-fancy/diff-so-fancy
 
 [user]
-    name = "Jan Bína"
-    # always ask for email in new repo and don't use some random bullshit
-    useConfigOnly = true
+	name = "Jan Bína"
+	# always ask for email in new repo and don't use some random bullshit
+	useConfigOnly = true
 [alias]
-    a = add --all
-    an = number add
-    cm = commit
-    co = checkout
-    ps = push
-    pst = push --tags
-    pl = pull
-    rb = rebase
-    rbi = rebase --interactive
-    br = branch
-    st = number
-    cb = checkout -b
-    ll = log --oneline --graph --decorate --max-count=15
-    lll = log --oneline --graph --decorate
-    dff = diff HEAD^ HEAD
-    discard = checkout -- .
-    undo = reset HEAD^
-    nah = !git reset --hard && git clean -df
-    amend = commit --amend --no-edit
-    root = !pwd
-    chp = cherry-pick
-    arc = !git add . && git -c core.editor=true rebase --continue
-    prev = co HEAD^
+	a = add --all
+	an = number add
+	cm = commit
+	co = checkout
+	ps = push
+	pst = push --tags
+	pl = pull
+	rb = rebase
+	rbi = rebase --interactive
+	br = branch
+	st = number
+	cb = checkout -b
+	ll = log --oneline --graph --decorate --max-count=15
+	lll = log --oneline --graph --decorate
+	dff = diff HEAD^ HEAD
+	discard = checkout -- .
+	undo = reset HEAD^
+	nah = !git reset --hard && git clean -df
+	amend = commit --amend --no-edit
+	root = !pwd
+	chp = cherry-pick
+	arc = !git add . && git -c core.editor=true rebase --continue
+	prev = co HEAD^
 [core]
-    editor = vim
-    pager = diff-so-fancy | less --tabs=4 -RFX
-    excludesfile = ~/.config/git/global-gitignore
+	editor = vim
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	excludesfile = ~/.config/git/global-gitignore
 [rebase]
-    autosquash = true
+	autosquash = true
 [push]
-    default = current
+	default = current
 [pull]
-    rebase = false
+	rebase = false
 [init]
-    defaultBranch = master
+	defaultBranch = master
