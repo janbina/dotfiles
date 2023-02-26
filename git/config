@@ -2,7 +2,9 @@
 #            `diff-so-fancy` https://github.com/so-fancy/diff-so-fancy
 
 [user]
-    name = Jan Bína 
+    name = "Jan Bína"
+    # always ask for email in new repo and don't use some random bullshit
+    useConfigOnly = true
 [alias]
     a = add --all
     an = number add
