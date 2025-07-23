@@ -1,7 +1,8 @@
 # Dracula Color Palette
-set -l foreground f8f8f2
-set -l selection 454158
-set -l comment 7970A9
+set -l background 0B0D0F
+set -l foreground F8F8F2
+set -l selection 414D58
+set -l comment 708CA9
 set -l red FF9580
 set -l orange FFCA80
 set -l yellow FFFF80
@@ -9,6 +10,12 @@ set -l green 8AFF80
 set -l purple 9580FF
 set -l cyan 80FFEA
 set -l pink FF80BF
+
+set -l functional_cyan 75ECE0
+set -l functional_green 7DE972
+set -l functional_purple 8C70E6
+set -l functional_red E67070
+set -l functional_yellow E6E370
 
 # Syntax Highlighting Colors
 set -g fish_color_normal $foreground
@@ -18,7 +25,7 @@ set -g fish_color_quote $yellow
 set -g fish_color_redirection $foreground
 set -g fish_color_end $orange
 set -g fish_color_error $red
-set -g fish_color_param $purple
+set -g fish_color_param $orange
 set -g fish_color_comment $comment
 set -g fish_color_selection --background=$selection
 set -g fish_color_search_match --background=$selection
@@ -31,3 +38,9 @@ set -g fish_pager_color_progress $comment
 set -g fish_pager_color_prefix $cyan
 set -g fish_pager_color_completion $foreground
 set -g fish_pager_color_description $comment
+
+# Hydro Colors
+set -g hydro_color_pwd $comment
+set -g hydro_color_git $yellow
+set -g hydro_color_error $red
+set -g hydro_color_prompt $comment
