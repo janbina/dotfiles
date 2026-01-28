@@ -4,17 +4,6 @@
       relink: true
 
 - link:
-    ~/.config/alacritty:
-    ~/.config/bspwm:
     ~/.config/fish:
     ~/.config/git:
-    ~/.config/picom:
-    ~/.config/polybar:
-    ~/.config/rofi:
-    ~/.config/redshift:
-    ~/.config/spectrwm:
     ~/.config/starship.toml: starship/starship.toml
-    ~/.config/swm:
-    ~/.config/sxhkd:
-    ~/.config/xmonad:
-    ~/.config/xmobar:

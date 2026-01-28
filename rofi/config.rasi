@@ -1,6 +1,0 @@
-configuration {
-	modi: "run,drun,window";
-	show-icons: false;
-}
-
-@theme "theme.rasi"
