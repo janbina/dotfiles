@@ -43,3 +43,6 @@
 	rebase = false
 [init]
 	defaultBranch = main
+[submodule]
+	recurse = true
+
