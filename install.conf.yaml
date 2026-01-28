@@ -6,4 +6,6 @@
 - link:
     ~/.config/fish:
     ~/.config/git:
+    ~/.config/skhd:
     ~/.config/starship.toml: starship/starship.toml
+    ~/.config/yabai:
