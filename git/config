@@ -10,7 +10,8 @@
 	a = add --all
 	an = number add
 	cm = commit
-	co = checkout
+	co = checkout --recurse-submodules
+	cob = !git checkout $(git branch --points-at HEAD | grep -v 'HEAD' | sed 's/* //' | head -n 1 | xargs)
 	ps = push
 	pst = push --tags
 	pl = pull

@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# git-checkoutsubmodules — Checkout branch in main repo and update submodules to matching branches
+# Usage: git checkoutsubmodules <branch-name>
+
+branch="$1"
+
+if [[ -z "$branch" ]]; then
+  echo "Usage: git checkoutsubmodules <branch-name>"
+  exit 1
+fi
+
+echo "==> Checking out '$branch' in main repo"
+git checkout "$branch" || exit 1
+
+echo "==> Updating submodules (recursive)"
+updated_submodules=$(git submodule update --init --recursive |
+  awk -F"'" '/Submodule path/{gsub(":", "", $2); print $2}' | sort -u)
+
+if [[ -z "$updated_submodules" ]]; then
+  echo "==> No submodules were updated"
+else
+  for path in $updated_submodules; do
+    echo "==> Entering submodule: $path"
+    (
+      cd "$path" || exit
+
+      # Get the first local branch that exactly points to HEAD, skipping detached HEAD line
+      branch_to_checkout=$(git branch --points-at HEAD | grep -v 'HEAD' | sed 's/* //' | head -n 1 | xargs)
+
+      if [[ -n "$branch_to_checkout" ]]; then
+        echo "    --> Checking out '$branch_to_checkout'"
+        git checkout "$branch_to_checkout"
+      else
+        echo "    !! No local branch points at HEAD, staying in detached HEAD"
+      fi
+    )
+  done
+fi
+
