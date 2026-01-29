@@ -12,9 +12,11 @@
     ~/.config/skhd:
     ~/.config/starship.toml: starship/starship.toml
     ~/.config/yabai:
+    ~/.gradle/gradle.properties:
     ~/.local/share/fish/fish_history:
     ~/.ssh: ssh
     ~/.vimrc: vimrc
 
 - brewfile:
-    Brewfile
+    - Brewfile
+
