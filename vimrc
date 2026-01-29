@@ -3,7 +3,7 @@ set number              " Show line numbers
 set relativenumber      " Show relative line numbers (great for jumping lines)
 set mouse=a             " Enable mouse support
 set clipboard=unnamedplus " Use system clipboard
-set cursorline          " Highlight the current line
+" set cursorline          " Highlight the current line
 set showmatch           " Highlight matching brackets
 
 " --- Search ---
