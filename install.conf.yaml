@@ -12,6 +12,7 @@
     ~/.config/skhd:
     ~/.config/starship.toml: starship/starship.toml
     ~/.config/yabai:
+    ~/.vimrc: vimrc
 
 - brewfile:
     Brewfile
