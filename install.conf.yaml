@@ -3,6 +3,9 @@
       create: true
       relink: true
 
+- plugins:
+    - dotbot-brew/
+
 - link:
     ~/.config/fish:
     ~/.config/git:
