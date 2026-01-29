@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# 1. Check if Homebrew is installed by looking for the 'brew' executable
+if ! command -v brew &> /dev/null; then
+    echo "Homebrew not found. Starting installation..."
+    
+    # 2. Run the official Homebrew installation script
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    
+    # 3. Add Homebrew to the PATH for the current session (macOS Apple Silicon default)
+    if [[ "$(uname -m)" == "arm64" ]]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    else
+        eval "$(/usr/local/bin/brew shellenv)"
+    fi
+else
+    echo "Homebrew is already installed. Updating..."
+    brew update
+fi
+
+# 4. Run the Bundle command
+# Assumes your Brewfile is in the same directory as this script
+if [ -f "Brewfile" ]; then
+    echo "Brewfile detected. Installing dependencies..."
+    brew bundle
+else
+    echo "Error: Brewfile not found in the current directory."
+    exit 1
+fi
+
+echo "Everything is up to date!"
+

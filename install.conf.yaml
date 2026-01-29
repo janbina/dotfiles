@@ -3,9 +3,6 @@
       create: true
       relink: true
 
-- plugins:
-    - dotbot-brew
-
 - link:
     ~/.config/fish:
     ~/.config/git:
@@ -16,7 +13,4 @@
     ~/.local/share/fish/fish_history:
     ~/.ssh: ssh
     ~/.vimrc: vimrc
-
-- brewfile:
-    - Brewfile
 
