@@ -1,0 +1,18 @@
+tap "homebrew/services"
+tap "koekeishiya/formulae"
+brew "diff-so-fancy"
+brew "fish"
+brew "fisher"
+brew "git-number"
+brew "git-recent"
+brew "kdoctor"
+brew "vim"
+brew "koekeishiya/formulae/skhd"
+brew "koekeishiya/formulae/yabai", args: ["HEAD"]
+cask "betterdisplay"
+cask "font-jetbrains-mono-nerd-font"
+cask "iina"
+cask "iterm2"
+cask "jetbrains-toolbox"
+cask "spotify"
+
